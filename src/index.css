@@ -22,12 +22,32 @@ button {
   font-family: 'Audiowide', cursive;
 }
 
-Link {
+.quiz-link {
   padding: 10px;
   height: 10px;
   background-color: #85ca65;
   border-radius: 5px;
   opacity: .99 !important;
+  text-decoration: none;
+  font-size: 12px;
+  color: #000;
+}
+
+.quiz-margin {
+  margin-bottom: 20px;
+}
+
+.card-link {
+  padding: 10px;
+  height: 10px;
+  background-color: #85ca65;
+  border-radius: 5px;
+  opacity: .99 !important;
+  text-decoration: none;
+  font-size: 12px;
+  color: #000;
+  margin: 20px;
+  margin-top: 50px;
 }
 
 .App {
@@ -70,11 +90,22 @@ h1 {
   top: 50%;
   left: 50%;
   margin-top: -200px;
-    margin-left: -300px;
+  margin-left: -300px;
 }
 
 .quiz h1 {
   margin-left: 60px;
+}
+
+.english-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  margin: 10px;
+  color: #000;
 }
 
 .logout {
@@ -89,26 +120,54 @@ h1 {
 
 .thugLife {
   height: 200px;
-  display: inline-block;
-  padding-top: 20px;
+  margin-top: -20px;
 }
 
 .ewokLife {
-  width: 150px;
+  height: 200px;
+}
+
+.card-page {
+  margin-top: 25px;
+}
+
+.card-header h1 {
+  margin-top: 50px;
+  height: 125px;
+  width: 350px;
+  border-radius: 5px;
+  background-color: #fff;
+  opacity: .7;
+  text-align: center;
+  margin-left: 39%;
+}
+
+.card-header h2 {
+  margin-top: -28px;
+  height: 85px;
+  width: 350px;
+  border-radius: 5px;
+  background-color: #fff;
+  opacity: .7;
+  text-align: center;
+  margin-left: 39%;
 }
 
 .print-card p {
   background-color: #fff;
-  height: 200px;
+  padding-top: 80px;
+  height: 100px;
   width: 300px;
   border: 2px dashed black;
   display: inline-block;
 }
 
 .study-card p {
-  height: 200px;
+  padding-top: 80px;
+  height: 100px;
   width: 300px;
   border: 2px solid black;
   display: inline-block;
   border-radius: 5px;
+  background-color: #fff;
 }
