@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Landing from './Landing';
+import Redirect from './Redirect.js'
 import Quiz from './Quiz.js'
 import CardPage from './CardPage.js'
 import './index.css';
@@ -14,8 +15,11 @@ import RequireAuth from './requireAuth'
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/(:access_token)" component={App}>
+      <Route path="/" component={App}>
         <IndexRoute component={Landing} />
+        <Route path="access_token" component={Redirect} >
+          <IndexRoute component={Landing} />
+        </Route>
         <Route path="quiz" component={RequireAuth(Quiz)} />
         <Route path="print-cards" component={CardPage} printable='true' />
         <Route path="study-cards" component={CardPage} printable='false' />

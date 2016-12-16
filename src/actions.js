@@ -1,5 +1,4 @@
 import fetch from 'isomorphic-fetch';
-import cookie from 'react-cookie';
 
 const URL = "http://localhost:3090/"
 
@@ -42,11 +41,11 @@ export const populateQuestions = (data) => {
 }
 
 export const FETCH_QUESTION = 'FETCH_QUESTION'
-export const fetchQuestion = () => {
-	console.log("Access TOKEN::", this.props.accessToken)
+export const fetchQuestion = (accessToken) => {
+	console.log("Access TOKEN::", accessToken)
 	return (dispatch) => {
 		return fetch(URL + 'question', {headers: {'Accept': 'application/json', 
-			'Authorization': `Bearer ${this.props.accessToken}`}}
+			'Authorization': `Bearer ${accessToken}`}}
 		).then((res) => {
 			if (res.status < 200 || res.status >= 300) {
 				const error = new Error(res.statusText);
@@ -62,14 +61,14 @@ export const fetchQuestion = () => {
 }
 
 export const SEND_USER_INPUT = 'SEND_USER_INPUT'
-export const sendUserInput = (_id, isCorrect) => {
-	console.log("Access TOKEN::", this.props.accessToken)
+export const sendUserInput = (_id, isCorrect, accessToken) => {
+	console.log("Access TOKEN::", accessToken)
 	return (dispatch) => {
 		return fetch(URL + 'question', {
 			method: 'PUT',
 			body: JSON.stringify({_id, isCorrect}),
 			headers: {'Accept': 'application/json', 'content-type': 'application/json', 
-			'Authorization': `Bearer ${cookie.load('accessToken')}`}
+			'Authorization': `Bearer ${accessToken}`}
 		}).then((res) => {
 			if (res.status < 200 || res.status >= 300) {
 				const error = new Error(res.statusText);

@@ -8,7 +8,7 @@ class Quiz extends Component {
     e.preventDefault();
     let isCorrect = (e.target.englishInput.value === this.props.question.answer) ? true : false;
     this.props.checkResponse(isCorrect)
-    this.props.sendUserInput(this.props.question._id, isCorrect)
+    this.props.sendUserInput(this.props.question._id, isCorrect, this.props.accessToken)
   }
 
   renderEwok() {
@@ -31,7 +31,7 @@ class Quiz extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchQuestion()
+    this.props.fetchQuestion(this.props.accessToken)
   }
 
   checkQuestion() {
@@ -67,7 +67,8 @@ function mapStateToProps(state) {
   return {
     question: state.questions[0],
     numCorrect: state.numCorrect,
-    numIncorrect: state.numIncorrect
+    numIncorrect: state.numIncorrect,
+    accessToken: state.accessToken
   }
 }
 
