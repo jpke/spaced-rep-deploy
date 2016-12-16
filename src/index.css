@@ -61,11 +61,7 @@ button {
   width: 700px;
   margin: auto;
   border-radius: 10px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -200px;
-    margin-left: -300px;
+  margin-top: 200px;
 }
 
 h1 {
@@ -141,7 +137,6 @@ input {
   background-color: #fff;
   opacity: .7;
   text-align: center;
-  /*margin-left: 39%;*/
 }
 
 .printableFlashCards {
@@ -157,7 +152,6 @@ input {
   background-color: #fff;
   opacity: .7;
   text-align: center;
-  /*margin-left: 39%;*/
 }
 
 .print-card p {
