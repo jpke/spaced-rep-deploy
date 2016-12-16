@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import * as actions from './actions';
 import PrintCard from './PrintCard'
 import StudyCard from './StudyCard'
@@ -198,10 +199,22 @@ export default class CardPage extends Component {
 	render() {
 		//console.log('STATE:::', this.state.questions)
 		return  <div className='card-page'>
-					{this.props.route.printable == 'true' ? 
-						<h1>Printable Flash Cards</h1> : <h1>Study Ewokese</h1>}
-					{this.createCards()}
-				</div>
+              <div className='card-header'>
+      					{this.props.route.printable == 'true' ?
+                  <div>
+                    <Link className='card-link' to="/study-cards">Go To Study Page</Link>
+                    <Link className='quiz-link' to="quiz">Go To Quiz</Link> 
+        						<h1>Printable Flash Cards</h1>
+                  </div> :
+                  <div className='card-header'>
+                    <Link className='card-link' to="/print-cards">Print Flash Cards</Link>
+                    <Link className='quiz-link' to="quiz">Go To Quiz</Link> 
+                    <h1>Study Ewokese</h1>
+                    <h2>click on card for translation</h2>
+                  </div>}
+      					   {this.createCards()}
+				      </div>
+            </div>
 	}
 
 }
