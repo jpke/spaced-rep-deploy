@@ -6,8 +6,8 @@ import cookie from 'react-cookie'
 
 class Landing extends Component {
 	handleOnClick() {
-		// window.location.href='https://intense-wildwood-92655.herokuapp.com/auth/google/'
-		window.location.href='http://localhost:3090/auth/google/'
+		window.location.href='https://intense-wildwood-92655.herokuapp.com/auth/google/'
+		// window.location.href='http://localhost:3090/auth/google/'
 	}
 
 	componentWillMount() {

@@ -1,8 +1,8 @@
 import fetch from 'isomorphic-fetch';
 import cookie from 'react-cookie';
 
-// const url = 'https://intense-wildwood-92655.herokuapp.com/'
-const url = 'http://localhost:3090/'
+const url = 'https://intense-wildwood-92655.herokuapp.com/'
+// const url = 'http://localhost:3090/'
 
 export const CHECK_RESPONSE = 'CHECK_RESPONSE'
 export const checkResponse = (isCorrect) => {
