@@ -4,8 +4,8 @@ import * as actions from './actions.js';
 import { connect } from 'react-redux';
 import cookie from 'react-cookie'
 
-// const AUTH_URL = "http://localhost:3090/auth/google/"
-const AUTH_URL = "https://intense-wildwood-92655.herokuapp.com/auth/google"
+const AUTH_URL = "http://localhost:3090/auth/google/"
+// const AUTH_URL = "https://intense-wildwood-92655.herokuapp.com/auth/google"
 
 class Landing extends Component {
 	handleOnClick() {
@@ -13,11 +13,11 @@ class Landing extends Component {
 	}
 
 	componentWillMount() {
-		// console.log("PARAMS", this.props.location.search)
-		// if(this.props.params.access_token) {
-		// 	console.log("this is running")
-		// 	this.props.loggedIn(this.props.location.search.split("?")[1])
-		// }
+    console.log("PARAMS", this.props.location.search)
+    if(this.props.location.search) {
+      console.log("this is running")
+      this.props.loggedIn(this.props.location.search.split("?")[1])
+    }
 	}
 	
 	render() {
