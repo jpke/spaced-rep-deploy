@@ -6,20 +6,15 @@ class Quiz extends Component {
   
   handleFormSubmit(e) {
     e.preventDefault();
-    let isCorrect = (e.target.englishInput.value === this.props.question.answer) ? true : false;
+    let isCorrect = (e.target.englishInput.value.toLowerCase() === this.props.question.answer.toLowerCase()) ? true : false;
     this.props.checkResponse(isCorrect)
     this.props.sendUserInput(this.props.question._id, isCorrect)
+    e.target.englishInput.value = ''
   }
 
   renderEwok() {
-    let temp = [];
-    let i = 0;
-    for (i; i < this.props.numCorrect; i++) {
-        temp.push(<img className='thugLife' key={i} src="http://overmental.com/wp-content/uploads/2015/06/Wicket-thug-life.jpg" />)
-    }
-    for (let j = 0; j < this.props.numIncorrect; j++) {
-        temp.push(<img className='ewokLife' key={j + i} src="http://blog.officialstarwarscostumes.com/wp-content/uploads/2014/12/Ewok3.jpg" />)
-    }
+    let temp = this.props.isCorrect ? <img className='thugLife' src="http://overmental.com/wp-content/uploads/2015/06/Wicket-thug-life.jpg" /> :
+    <img className='ewokLife' src="http://blog.officialstarwarscostumes.com/wp-content/uploads/2014/12/Ewok3.jpg" />
     return (
       <div>{temp}</div>
     )
@@ -52,10 +47,14 @@ class Quiz extends Component {
                   <div className='ewok-meaning'>
                     <h3><span className='word-meaning'>Ewok:</span> {this.checkQuestion()}</h3>
                   </div>
-                  <h3 className='word-meaning'>English:</h3>
-                  <form onSubmit={this.handleFormSubmit.bind(this)}>
-                  <input type="text" name="englishInput" placeholder="english meaning" />
-                  </form>
+                  <div className='english-input'>
+                    <h3 className='word-meaning'>English:</h3>
+                    <form onSubmit={this.handleFormSubmit.bind(this)}>
+                    <input type="text" name="englishInput" placeholder="english meaning" />
+                    <button>Submit</button>
+                    </form>
+                  </div>
+                  <h2>Score: {this.props.score}</h2>
                   {this.renderEwok()}
               </div>
             </div>
@@ -67,7 +66,9 @@ function mapStateToProps(state) {
     question: state.questions[0],
     numCorrect: state.numCorrect,
     numIncorrect: state.numIncorrect,
-    accessToken: state.accessToken
+    accessToken: state.accessToken,
+    isCorrect: state.isCorrect,
+    score : state.score
   }
 }
 
