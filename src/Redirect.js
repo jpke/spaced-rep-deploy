@@ -4,7 +4,7 @@ import * as actions from './actions.js';
 import { connect } from 'react-redux';
 import Landing from './Landing'
 
-const URL = "http://localhost:3000"
+// const URL = "http://localhost:3000"
 
 class Redirect extends Component {
   componentWillMount() {
@@ -15,7 +15,7 @@ class Redirect extends Component {
     }
   }
   componentDidMount() {
-    setTimeout(this.props.router.replace('/'), 500)
+    // setTimeout(this.props.router.replace('/'), 500)
   }
   render() {
     return null
