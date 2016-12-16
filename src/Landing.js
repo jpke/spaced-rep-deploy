@@ -12,9 +12,11 @@ class Landing extends Component {
 
 	componentWillMount() {
 		this.props.saveCookie()
+		console.log(cookie.load('accessToken'));
 		if(cookie.load('accessToken')) {
 			// this.props.loggedIn()
 		}
+		console.log("ISLOGGEDIN:", this.props.isLoggedIn)
 	}
 	
 	render() {
