@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
-const URL = "http://localhost:3090/"
+// const URL = "http://localhost:3090/"
+const URL = process.env.URL
 
 export const CHECK_RESPONSE = 'CHECK_RESPONSE'
 export const checkResponse = (isCorrect) => {

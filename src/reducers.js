@@ -13,11 +13,9 @@ export const initialState = {
   numCorrect: 0,
   numIncorrect: 0,
   isLoggedIn: false,
-  accessToken: undefined
 }
 
 export const Reducer = function(state=initialState, action={}) {
-console.log('cookie::::', cookie.load('accessToken'))
   switch(action.type) {
 
     case CHECK_RESPONSE:
@@ -43,11 +41,12 @@ console.log('cookie::::', cookie.load('accessToken'))
     case LOGGED_IN:
     console.log(action.accessToken)
     localStorage.setItem('token', action.accessToken)
-      return {...state, isLoggedIn: true, accessToken: action.accessToken}
+    localStorage.getItem('token')
+      return {...state, isLoggedIn: true}
 
     case LOG_OUT:
       localStorage.removeItem('token')
-      return {...state, isLoggedIn: false, accessToken: undefined}
+      return {...state, isLoggedIn: false}
 
     case POPULATE_QUESTIONS:
       return {...state, questions: action.data}
