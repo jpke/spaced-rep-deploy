@@ -4,7 +4,7 @@ import App from './App';
 import Landing from './Landing';
 import Redirect from './Redirect.js'
 import Quiz from './Quiz.js'
-import CardPage from './CardPage.js'
+import {CardPage, PrintCardPage} from './CardPage.js'
 import './index.css';
 import { Provider } from 'react-redux'
 import store from './configureStore'
@@ -24,7 +24,7 @@ ReactDOM.render(
         <IndexRoute component={Landing} />
         <Route path="access_token" component={Landing} />
         <Route path="quiz" component={RequireAuth(Quiz)} />
-        <Route path="print-cards" component={CardPage} printable='true' />
+        <Route path="print-cards" component={PrintCardPage} printable='true' />
         <Route path="study-cards" component={CardPage} printable='false' />
       </Route>
     </Router>

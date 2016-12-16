@@ -178,19 +178,18 @@ var questions = [
     }
   ]
 
-
-export default class CardPage extends Component {
+export class CardPage extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {questions}
-		this.Card = this.props.route.printable == "true" ? PrintCard : StudyCard;
+		this.state.Card = this.props.printable == "true" ? PrintCard : StudyCard;
 
 	}
 
 	createCards() {
 		const cards = this.state.questions.map((card, index) => {
 			return 	<div key={index}>
-						<this.Card card={card} />
+						<this.state.Card card={card} />
 					</div>
 		})
 		return cards
@@ -200,7 +199,7 @@ export default class CardPage extends Component {
 		//console.log('STATE:::', this.state.questions)
 		return  <div className='card-page'>
               <div className='card-header'>
-      					{this.props.route.printable == 'true' ?
+      					{this.props.printable == 'true' ?
                   <div>
                     <Link className='card-link' to="/study-cards">Go To Study Page</Link>
                     <Link className='quiz-link' to="quiz">Go To Quiz</Link> 
@@ -218,4 +217,6 @@ export default class CardPage extends Component {
 	}
 
 }
+
+export function PrintCardPage() {return <CardPage printable="true" />;}
 
