@@ -14,6 +14,7 @@ class Landing extends Component {
 
 	componentWillMount() {
     console.log("PARAMS", this.props.location.search)
+    console.log("LOCALSTORAGE:", localStorage.getItem('token'))
     if(this.props.location.search) {
       console.log("this is running")
       this.props.loggedIn(this.props.location.search.split("?")[1])
