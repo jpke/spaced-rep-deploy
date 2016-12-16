@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import Landing from './Landing';
 import Quiz from './Quiz.js'
-import Cards from './Cards.js'
+import CardPage from './CardPage.js'
 import './index.css';
 import { Provider } from 'react-redux'
 import store from './configureStore'
@@ -17,7 +17,8 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={Landing} />
         <Route path="quiz" component={RequireAuth(Quiz)} />
-        <Route path="cards" component={Cards} />
+        <Route path="print-cards" component={CardPage} printable='true' />
+        <Route path="study-cards" component={CardPage} printable='false' />
       </Route>
     </Router>
   </Provider>,

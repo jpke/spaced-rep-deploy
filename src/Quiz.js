@@ -7,15 +7,18 @@ class Quiz extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     let isCorrect = (e.target.englishInput.value === this.props.question.answer) ? true : false;
-    console.log('IS CORRECT: ', isCorrect)
     this.props.checkResponse(isCorrect)
     this.props.sendUserInput(this.props.question._id, isCorrect)
   }
 
-  renderEwok(numCorrect) {
+  renderEwok() {
     let temp = [];
-    for (let i = 0; i < this.props.numCorrect; i++) {
+    let i = 0;
+    for (i; i < this.props.numCorrect; i++) {
         temp.push(<img className='thugLife' key={i} src="http://overmental.com/wp-content/uploads/2015/06/Wicket-thug-life.jpg" />)
+    }
+    for (let j = 0; j < this.props.numIncorrect; j++) {
+        temp.push(<img className='ewokLife' key={j + i} src="http://blog.officialstarwarscostumes.com/wp-content/uploads/2014/12/Ewok3.jpg" />)
     }
     return (
       <div>{temp}</div>
@@ -40,18 +43,22 @@ class Quiz extends Component {
   }
 
   render() {
-    return <div>
-            <button onClick={this.handleClick.bind(this)}>Log Out</button>
-            <h1>Ewokese Quiz</h1>
-            <div className="question-card"> 
-                <h3>Ewok:</h3><p>{this.checkQuestion()}</p>
-                <h3>English:</h3>
-                <form onSubmit={this.handleFormSubmit.bind(this)}>
-                <input type="text" name="englishInput" placeholder="english meaning" />
-                </form>
-                {this.renderEwok(this.props.numCorrect)}
+    return  <div className='quiz'>
+              <div>
+                <button className='logout' onClick={this.handleClick.bind(this)}>Log Out</button>
+              </div>
+              <h1>Ewokese Quiz</h1>
+              <div className="question-card"> 
+                  <div className='ewok-meaning'>
+                    <h3><span className='word-meaning'>Ewok:</span> {this.checkQuestion()}</h3>
+                  </div>
+                  <h3 className='word-meaning'>English:</h3>
+                  <form onSubmit={this.handleFormSubmit.bind(this)}>
+                  <input type="text" name="englishInput" placeholder="english meaning" />
+                  </form>
+                  {this.renderEwok()}
+              </div>
             </div>
-           </div>
   }
 }
 
@@ -59,7 +66,8 @@ function mapStateToProps(state) {
   console.log('STATE::', state)
   return {
     question: state.questions[0],
-    numCorrect: state.numCorrect
+    numCorrect: state.numCorrect,
+    numIncorrect: state.numIncorrect
   }
 }
 

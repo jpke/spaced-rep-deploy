@@ -1,7 +1,8 @@
 import fetch from 'isomorphic-fetch';
 import cookie from 'react-cookie';
 
-const url = 'https://intense-wildwood-92655.herokuapp.com/'
+// const url = 'https://intense-wildwood-92655.herokuapp.com/'
+const url = 'http://localhost:3090/'
 
 export const CHECK_RESPONSE = 'CHECK_RESPONSE'
 export const checkResponse = (isCorrect) => {
@@ -43,8 +44,7 @@ export const populateQuestions = (data) => {
 export const FETCH_QUESTION = 'FETCH_QUESTION'
 export const fetchQuestion = () => {
 	return (dispatch) => {
-		// const url = 'http://localhost:3090/question'
-		return fetch(url + '/question', {headers: {'Accept': 'application/json', 
+		return fetch(url + 'question', {headers: {'Accept': 'application/json', 
 			'Authorization': `Bearer ${cookie.load('accessToken')}`}}
 		).then((res) => {
 			if (res.status < 200 || res.status >= 300) {
@@ -64,8 +64,7 @@ export const SEND_USER_INPUT = 'SEND_USER_INPUT'
 export const sendUserInput = (_id, isCorrect) => {
 	console.log('actions json', JSON.stringify({_id, isCorrect}))
 	return (dispatch) => {
-		// const url = 'http://localhost:3090/question'
-		return fetch(url + '/question', {
+		return fetch(url + 'question', {
 			method: 'PUT',
 			body: JSON.stringify({_id, isCorrect}),
 			headers: {'Accept': 'application/json', 'content-type': 'application/json', 
