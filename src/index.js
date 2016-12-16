@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Landing from './Landing';
-import Redirect from './Redirect.js'
 import Quiz from './Quiz.js'
 import {CardPage, PrintCardPage} from './CardPage.js'
 import './index.css';
