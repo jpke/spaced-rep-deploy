@@ -129,6 +129,8 @@ input {
 
 .card-page {
   margin-top: 25px;
+  display: flex;
+  justify-content: center;
 }
 
 .card-header h1 {
@@ -139,7 +141,12 @@ input {
   background-color: #fff;
   opacity: .7;
   text-align: center;
-  margin-left: 39%;
+  /*margin-left: 39%;*/
+}
+
+.printableFlashCards {
+  margin: auto;
+  margin-top: 35px;
 }
 
 .card-header h2 {
@@ -150,7 +157,7 @@ input {
   background-color: #fff;
   opacity: .7;
   text-align: center;
-  margin-left: 39%;
+  /*margin-left: 39%;*/
 }
 
 .print-card p {

@@ -203,7 +203,7 @@ export class CardPage extends Component {
                   <div>
                     <Link className='card-link' to="/study-cards">Go To Study Page</Link>
                     <Link className='quiz-link' to="quiz">Go To Quiz</Link> 
-        						<h1>Printable Flash Cards</h1>
+        						<h1 className="printableFlashCards">Printable Flash Cards</h1>
                   </div> :
                   <div className='card-header'>
                     <Link className='card-link' to="/print-cards">Print Flash Cards</Link>
