@@ -14,7 +14,7 @@ import RequireAuth from './requireAuth'
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={App}>
+      <Route path="/(:access_token)" component={App}>
         <IndexRoute component={Landing} />
         <Route path="quiz" component={RequireAuth(Quiz)} />
         <Route path="print-cards" component={CardPage} printable='true' />

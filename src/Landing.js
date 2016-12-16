@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import cookie from 'react-cookie'
 
 const AUTH_URL = "http://localhost:3090/auth/google/"
+const URL = "http://localhost:3000"
 
 class Landing extends Component {
 	handleOnClick() {
@@ -12,12 +13,11 @@ class Landing extends Component {
 	}
 
 	componentWillMount() {
-		this.props.saveCookie()
-		console.log(cookie.load('accessToken'));
-		if(cookie.load('accessToken')) {
-			// this.props.loggedIn()
+		console.log("PARAMS", this.props.location.search)
+		if(this.props.params.access_token) {
+			console.log("this is running")
+			this.props.loggedIn(this.props.location.search.split("?")[1])
 		}
-		console.log("ISLOGGEDIN:", this.props.isLoggedIn)
 	}
 	
 	render() {
@@ -28,7 +28,7 @@ class Landing extends Component {
 	       		<h3>Ewoks existed. Learn to speak Ewokese!</h3>
 				<div>
 					{
-						this.props.isLoggedIn ? <Link to="/quiz">Go To Quiz</Link> : 
+						this.props.isLoggedIn ? <Link to="quiz">Go To Quiz</Link> : 
 						<button onClick={this.handleOnClick.bind(this)}>Login through Google</button> 
 	       			}
 				</div>

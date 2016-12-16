@@ -12,7 +12,8 @@ export const initialState = {
   questions: [],
   numCorrect: 0,
   numIncorrect: 0,
-  isLoggedIn: (cookie.load('accessToken') != null)
+  isLoggedIn: (false),
+  accessToken: undefined
 }
 
 export const Reducer = function(state=initialState, action={}) {
@@ -40,14 +41,13 @@ console.log('cookie::::', cookie.load('accessToken'))
               numCorrect: numCorrect, numIncorrect: numIncorrect }
 
     case LOGGED_IN:
-      return {...state, isLoggedIn: true}
+      return {...state, isLoggedIn: true, accessToken: action.accessToken}
     
-    case SAVE_COOKIE:
-      return {...state, isLoggedIn: cookie.load('accessToken') != null}
+    // case SAVE_COOKIE:
+    //   return {...state, isLoggedIn: cookie.load('accessToken') != null}
 
     case LOG_OUT:
-      cookie.remove('accessToken')
-      return {...state, isLoggedIn: false}
+      return {...state, isLoggedIn: false, accessToken: undefined}
 
     case POPULATE_QUESTIONS:
       return {...state, questions: action.data}

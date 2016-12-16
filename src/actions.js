@@ -12,9 +12,10 @@ export const checkResponse = (isCorrect) => {
 }
 
 export const LOGGED_IN = 'LOGGED_IN'
-export const loggedIn = () => {
+export const loggedIn = (accessToken) => {
 	return {
-		type: LOGGED_IN
+		type: LOGGED_IN,
+		accessToken
 	}
 }
 
@@ -42,9 +43,10 @@ export const populateQuestions = (data) => {
 
 export const FETCH_QUESTION = 'FETCH_QUESTION'
 export const fetchQuestion = () => {
+	console.log("Access TOKEN::", this.props.accessToken)
 	return (dispatch) => {
 		return fetch(URL + 'question', {headers: {'Accept': 'application/json', 
-			'Authorization': `Bearer ${cookie.load('accessToken')}`}}
+			'Authorization': `Bearer ${this.props.accessToken}`}}
 		).then((res) => {
 			if (res.status < 200 || res.status >= 300) {
 				const error = new Error(res.statusText);
@@ -61,7 +63,7 @@ export const fetchQuestion = () => {
 
 export const SEND_USER_INPUT = 'SEND_USER_INPUT'
 export const sendUserInput = (_id, isCorrect) => {
-	console.log('actions json', JSON.stringify({_id, isCorrect}))
+	console.log("Access TOKEN::", this.props.accessToken)
 	return (dispatch) => {
 		return fetch(URL + 'question', {
 			method: 'PUT',
