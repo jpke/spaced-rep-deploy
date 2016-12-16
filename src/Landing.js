@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import * as actions from './actions.js';
 import { connect } from 'react-redux';
 import cookie from 'react-cookie'
-require("dotenv").config({silent: true});
-const AUTH_URL = process.env.AUTH_URL
+
+const AUTH_URL = "http://localhost:3090/auth/google/"
 
 class Landing extends Component {
 	handleOnClick() {

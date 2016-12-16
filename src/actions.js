@@ -1,8 +1,7 @@
 import fetch from 'isomorphic-fetch';
 import cookie from 'react-cookie';
-require("dotenv").config({silent:true});
 
-const URL = process.env.URL
+const URL = "http://localhost:3090/"
 
 export const CHECK_RESPONSE = 'CHECK_RESPONSE'
 export const checkResponse = (isCorrect) => {
