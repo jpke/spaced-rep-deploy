@@ -12,7 +12,7 @@ export const initialState = {
   questions: [],
   numCorrect: 0,
   numIncorrect: 0,
-  isLoggedIn: (false),
+  isLoggedIn: false,
   accessToken: undefined
 }
 
@@ -41,12 +41,12 @@ console.log('cookie::::', cookie.load('accessToken'))
               numCorrect: numCorrect, numIncorrect: numIncorrect }
 
     case LOGGED_IN:
+    console.log(action.accessToken)
+    localStorage.setItem('token', action.accessToken)
       return {...state, isLoggedIn: true, accessToken: action.accessToken}
-    
-    // case SAVE_COOKIE:
-    //   return {...state, isLoggedIn: cookie.load('accessToken') != null}
 
     case LOG_OUT:
+      localStorage.removeItem('token')
       return {...state, isLoggedIn: false, accessToken: undefined}
 
     case POPULATE_QUESTIONS:
