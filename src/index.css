@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Audiowide|Bungee');
 
-html { 
-  background: url(http://media1.popsugar-assets.com/files/2015/04/30/775/n/1922398/49aaba0705004e3d_ST-ewokvillageUyNap4.fbshare/i/Inspiration-Bright-Tree-Village-Endor.jpg) no-repeat center center fixed; 
+html {
+  background: url(http://media1.popsugar-assets.com/files/2015/04/30/775/n/1922398/49aaba0705004e3d_ST-ewokvillageUyNap4.fbshare/i/Inspiration-Bright-Tree-Village-Endor.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -55,7 +55,7 @@ button {
 }
 
 .landing {
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
   opacity: .7;
   height: 500px;
   width: 700px;
