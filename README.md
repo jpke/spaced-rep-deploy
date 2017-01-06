@@ -15,7 +15,18 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 
 
-### API Reference
+## Technologies
+
+* React
+* Redux
+* JavaScript
+* CSS
+* Google OAuth2
+* MongoDB
+
+
+
+## API Reference
 
 * GET /question      :: returns all questions
 * GET /auth/google   :: initial authentication request
@@ -23,6 +34,12 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
   callback    
 * PUT /question      :: updates questions array  
 
+
+
+
+## Use
+
+* To use this app, you must clone this repository and the one found at https://github.com/jpke/spaced-rep-express. You have to obtain credentials from Google for authentication access. You can find a guideline here:  https://developers.google.com/identity/protocols/OAuth2 . 
 
 
 
