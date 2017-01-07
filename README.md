@@ -27,7 +27,7 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 
 ## API Reference
-##### The server code can be found at: https://github.com/jpke/spaced-rep-express
+##### The server code can be found [here](https://github.com/jpke/spaced-rep-express)
 
 * GET /question      :: returns all questions
 * GET /auth/google   :: initial authentication request
@@ -40,7 +40,7 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 ## Use
 
-* To use this app, navigate to https://jpke.github.io/spaced-rep-deploy/#/ and authenticate through Google. The redirect to do this may take a few seconds since the app express server is on a free heroku dyno that may need to wake up.
+* To use this app, navigate [here](https://jpke.github.io/spaced-rep-deploy/#/) and authenticate through Google. The redirect to do this may take a few seconds since the app express server is on a free heroku dyno that may need to wake up.
 * To develop on this app's frontend, make sure you have node and npm [installed](https://docs.npmjs.com/getting-started/installing-node), then simply clone the repo run:
 
  ```sh
@@ -53,12 +53,12 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
  npm start
  ```
 
- #### Note, you will need to change ```const URL``` in src/actions.js and ```const AURH_URL``` in src/Landing.js to http://localhost:3090 in order to develop locally.
+ * Note, you will need to change ```const URL``` in src/actions.js and ```const AURH_URL``` in src/Landing.js to http://localhost:3090 in order to develop locally.
 
 * These same npm commands will work for development on the [backend express server](https://github.com/jpke/spaced-rep-express).
 
 
-
+##
 ##### Contributers
 * bsoung
 * dennellmarie
