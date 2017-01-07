@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
-const URL = "http://localhost:3090/"
-// const URL =  "https://intense-wildwood-92655.herokuapp.com/"
+// const URL = "http://localhost:3090/"
+const URL =  "https://intense-wildwood-92655.herokuapp.com/"
 
 export const CHECK_RESPONSE = 'CHECK_RESPONSE'
 export const checkResponse = (isCorrect) => {
@@ -45,7 +45,7 @@ export const FETCH_QUESTION = 'FETCH_QUESTION'
 export const fetchQuestion = () => {
 	console.log("Access TOKEN::", localStorage.getItem('token'))
 	return (dispatch) => {
-		return fetch(URL + 'question', {headers: {'Accept': 'application/json', 
+		return fetch(URL + 'question', {headers: {'Accept': 'application/json',
 			'Authorization': `Bearer ${localStorage.getItem('token')}`}}
 		).then((res) => {
 			if (res.status < 200 || res.status >= 300) {
@@ -67,7 +67,7 @@ export const sendUserInput = (_id, isCorrect) => {
 		return fetch(URL + 'question', {
 			method: 'PUT',
 			body: JSON.stringify({_id, isCorrect}),
-			headers: {'Accept': 'application/json', 'content-type': 'application/json', 
+			headers: {'Accept': 'application/json', 'content-type': 'application/json',
 			'Authorization': `Bearer ${localStorage.getItem('token')}`}
 		}).then((res) => {
 			if (res.status < 200 || res.status >= 300) {

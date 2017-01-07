@@ -196,20 +196,24 @@ export class CardPage extends Component {
 	}
 
 	render() {
-		//console.log('STATE:::', this.state.questions)
 		return  <div className='card-page'>
               <div className='card-header'>
       					{this.props.printable == 'true' ?
                   <div>
                     <Link className='card-link' to="/study-cards">Go To Study Page</Link>
-                    <Link className='quiz-link' to="quiz">Go To Quiz</Link> 
-        						<h1 className="printableFlashCards">Printable Flash Cards</h1>
-                  </div> :
+                    <Link className='quiz-link' to="quiz">Go To Quiz</Link>
+                    <div className="cardPage-title printable">
+          						<h1 className="printableFlashCards">Printable Flash Cards</h1>
+                    </div>
+                  </div>
+                  :
                   <div className='card-header'>
                     <Link className='card-link' to="/print-cards">Print Flash Cards</Link>
-                    <Link className='quiz-link' to="quiz">Go To Quiz</Link> 
-                    <h1>Study Ewokese</h1>
-                    <h2>click on card for translation</h2>
+                    <Link className='quiz-link' to="quiz">Go To Quiz</Link>
+                    <div className="cardPage-title">
+                      <h1>Study Ewokese</h1>
+                      <h2>click on card for translation</h2>
+                    </div>
                   </div>}
       					   {this.createCards()}
 				      </div>
@@ -219,4 +223,3 @@ export class CardPage extends Component {
 }
 
 export function PrintCardPage() {return <CardPage printable="true" />;}
-

@@ -4,8 +4,8 @@ import * as actions from './actions.js';
 import { connect } from 'react-redux';
 import cookie from 'react-cookie'
 
-const AUTH_URL = "http://localhost:3090/auth/google/"
-// const AUTH_URL = "https://intense-wildwood-92655.herokuapp.com/auth/google"
+// const AUTH_URL = "http://localhost:3090/auth/google/"
+const AUTH_URL = "https://intense-wildwood-92655.herokuapp.com/auth/google"
 
 class Landing extends Component {
 	handleOnClick() {
@@ -20,7 +20,7 @@ class Landing extends Component {
       this.props.loggedIn(this.props.location.search.split("?")[1])
     }
 	}
-	
+
 	render() {
     return <div className='landing'>
 				<h1>Learn Ewokese</h1>
@@ -29,16 +29,16 @@ class Landing extends Component {
 	       		<h3>Ewoks existed. Learn to speak Ewokese!</h3>
 				<div className='quiz-margin'>
 					{
-						this.props.isLoggedIn ? <Link className='quiz-link' to="quiz">Go To Quiz</Link> : 
-						<button onClick={this.handleOnClick.bind(this)}>Login through Google</button> 
+						this.props.isLoggedIn ? <Link className='quiz-link' to="quiz">Go To Quiz</Link> :
+						<button onClick={this.handleOnClick.bind(this)}>Login through Google</button>
 	       			}
 				</div>
 				<div>
 	       			{
-						this.props.isLoggedIn ? <Link className='card-link' to="/study-cards">Go To Study Page</Link> : "" 
+						this.props.isLoggedIn ? <Link className='card-link' to="/study-cards">Go To Study Page</Link> : ""
 	       			}
 	       			{
-						this.props.isLoggedIn ? <Link className='card-link' to="/print-cards">Print Flash Cards</Link> : "" 
+						this.props.isLoggedIn ? <Link className='card-link' to="/print-cards">Print Flash Cards</Link> : ""
 	       			}
 	       		</div>
            </div>

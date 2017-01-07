@@ -55,8 +55,7 @@ button {
 }
 
 .landing {
-  background-color: rgba(255,255,255,0.5);
-  opacity: .7;
+  background-color: rgba(255,255,255,0.6);
   height: 500px;
   width: 700px;
   margin: auto;
@@ -71,13 +70,11 @@ h1 {
 
 .ewok-friend {
   height: 200px;
-  opacity: 100% !important;
   border-radius: 8px;
 }
 
 .quiz {
-  background-color: #fff;
-  opacity: .7;
+  background-color: rgba(255,255,255,0.6);
   height: 500px;
   width: 700px;
   margin: auto;
@@ -126,28 +123,31 @@ input {
   justify-content: center;
 }
 
-.card-header h1 {
-  margin-top: 50px;
-  height: 125px;
-  width: 350px;
+.cardPage-title {
+  background-color: rgba(255,255,255,0.6);
   border-radius: 5px;
-  background-color: #fff;
-  opacity: .7;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.printableFlashCards {
+.printable {
+  width: 400px;
   margin: auto;
-  margin-top: 35px;
+  margin-top: 50px;
+}
+
+.card-header h1 {
+  height: 125px;
+  width: 350px;
 }
 
 .card-header h2 {
   margin-top: -28px;
   height: 85px;
   width: 350px;
-  border-radius: 5px;
-  background-color: #fff;
-  opacity: .7;
   text-align: center;
 }
 
