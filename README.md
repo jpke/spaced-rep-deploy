@@ -1,6 +1,6 @@
 # Ewokese
 
-A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brush up on your Ewokese!
+A long time ago in a galaxy far, far away... Ewoks existed. Use [this app](https://jpke.github.io/spaced-rep-deploy/#/) to brush up on your Ewokese!
 
 
 
