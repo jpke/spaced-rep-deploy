@@ -14,6 +14,16 @@ body {
   font-family: 'Audiowide', cursive;
 }
 
+.App {
+  text-align: center;
+}
+
+.thugLife {
+  height: 200px;
+  display: inline-block;
+  padding-top: 20px;
+}
+
 button {
   padding: 10px;
   background-color: #85ca65;
@@ -50,17 +60,17 @@ button {
   margin-top: 50px;
 }
 
-.App {
-  text-align: center;
-}
-
 .landing {
   background-color: rgba(255,255,255,0.6);
-  height: 500px;
+  height: 550px;
   width: 700px;
   margin: auto;
+  margin-top: 20vh;
   border-radius: 10px;
-  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -79,7 +89,7 @@ h1 {
   width: 700px;
   margin: auto;
   border-radius: 10px;
-  margin-top: 200px;
+  margin-top: 20vh;
 }
 
 .quiz h1 {
@@ -168,4 +178,14 @@ input {
   display: inline-block;
   border-radius: 5px;
   background-color: #fff;
+}
+
+@media screen and (min-width: 730px) {
+  .landing {
+
+  }
+  .quiz {
+    width: 90%;
+    overflow: hidden;
+  }
 }

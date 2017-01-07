@@ -7,18 +7,15 @@ const logger = createLogger()
 
 const middleware = [logger, thunk];
 
-const enhancers = compose(
-  applyMiddleware(...middleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-)
+// enable enhancers for debugging store
+// const enhancers = compose(
+//   applyMiddleware(...middleware),
+//   window.devToolsExtension ? window.devToolsExtension() : f => f
+// )
 
 const store = createStore(
   Reducer,
   initialState,
-  enhancers
+  // enhancers
 )
-// const store = createStore(
-//   Reducer
-// )
-console.log("store: ", store);
 export default store

@@ -20,7 +20,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path="/" component={App}>
-        <IndexRoute component={Landing} />
+        // <IndexRoute component={Landing} />
         <Route path="access_token" component={Landing} />
         <Route path="quiz" component={RequireAuth(Quiz)} />
         <Route path="print-cards" component={PrintCardPage} printable='true' />

@@ -1,12 +1,9 @@
 import {
   CHECK_RESPONSE,
   LOGGED_IN,
-  SAVE_COOKIE,
   LOG_OUT,
   POPULATE_QUESTIONS
 } from './actions';
-
-import cookie from 'react-cookie'
 
 export const initialState = {
   questions: [],
@@ -21,11 +18,9 @@ export const Reducer = function(state=initialState, action={}) {
   switch(action.type) {
 
     case CHECK_RESPONSE:
-      let questions;
       let score = state.score
       let numCorrect = state.numCorrect
       let numIncorrect = state.numIncorrect
-      let multiplier = 2
       if (action.isCorrect) {
         score += 5
         numCorrect++
@@ -34,7 +29,7 @@ export const Reducer = function(state=initialState, action={}) {
         numIncorrect++
       }
 
-      return { ...state, isCorrect: action.isCorrect, 
+      return { ...state, isCorrect: action.isCorrect,
               numCorrect: numCorrect, numIncorrect: numIncorrect, score: score }
 
     case LOGGED_IN:
@@ -49,7 +44,7 @@ export const Reducer = function(state=initialState, action={}) {
 
     case POPULATE_QUESTIONS:
       return {...state, questions: action.data}
-    
+
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from './actions';
 
 class Quiz extends Component {
-  
+
   handleFormSubmit(e) {
     e.preventDefault();
     let isCorrect = (e.target.englishInput.value.toLowerCase() === this.props.question.answer.toLowerCase()) ? true : false;
@@ -13,8 +13,8 @@ class Quiz extends Component {
   }
 
   renderEwok() {
-    let temp = this.props.isCorrect ? <img className='thugLife' src="http://overmental.com/wp-content/uploads/2015/06/Wicket-thug-life.jpg" /> :
-    <img className='ewokLife' src="http://blog.officialstarwarscostumes.com/wp-content/uploads/2014/12/Ewok3.jpg" />
+    let temp = this.props.isCorrect ? <img className='thugLife' src="http://overmental.com/wp-content/uploads/2015/06/Wicket-thug-life.jpg" alt="thug-life ewok"/> :
+    <img className='ewokLife' src="http://blog.officialstarwarscostumes.com/wp-content/uploads/2014/12/Ewok3.jpg" alt="scary ewok" />
     return (
       <div>{temp}</div>
     )
@@ -43,7 +43,7 @@ class Quiz extends Component {
                 <button className='logout' onClick={this.handleClick.bind(this)}>Log Out</button>
               </div>
               <h1>Ewokese Quiz</h1>
-              <div className="question-card"> 
+              <div className="question-card">
                   <div className='ewok-meaning'>
                     <h3><span className='word-meaning'>Ewok:</span> {this.checkQuestion()}</h3>
                   </div>

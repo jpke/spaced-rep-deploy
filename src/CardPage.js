@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import * as actions from './actions';
 import PrintCard from './PrintCard'
 import StudyCard from './StudyCard'
 
@@ -182,7 +180,7 @@ export class CardPage extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {questions}
-		this.state.Card = this.props.printable == "true" ? PrintCard : StudyCard;
+		this.state.Card = this.props.printable === "true" ? PrintCard : StudyCard;
 
 	}
 
@@ -198,7 +196,7 @@ export class CardPage extends Component {
 	render() {
 		return  <div className='card-page'>
               <div className='card-header'>
-      					{this.props.printable == 'true' ?
+      					{this.props.printable === 'true' ?
                   <div>
                     <Link className='card-link' to="/study-cards">Go To Study Page</Link>
                     <Link className='quiz-link' to="quiz">Go To Quiz</Link>
