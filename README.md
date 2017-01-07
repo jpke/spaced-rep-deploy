@@ -26,7 +26,7 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 
 ## API Reference
-##### The server code can be found [here](https://github.com/jpke/spaced-rep-express)
+#### The server code can be found [here](https://github.com/jpke/spaced-rep-express)
 
 * GET /question      :: returns all questions
 * GET /auth/google   :: initial authentication request
