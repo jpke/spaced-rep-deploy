@@ -17,10 +17,9 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 ## Technologies
 
-* React
-* Redux
-* JavaScript
-* CSS
+* HTML/CSS
+* React/Redux
+* Express
 * Google OAuth2
 * MongoDB
 
@@ -53,7 +52,7 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
  npm start
  ```
 
- * Note, you will need to change ```const URL``` in src/actions.js and ```const AURH_URL``` in src/Landing.js to http://localhost:3090 in order to develop locally.
+ * Note, you will need to change ```const URL``` in src/actions.js and ```const AURH_URL``` in src/Landing.js to [http://localhost:3090](http://localhost:3090) in order to develop locally.
 
 * These same npm commands will work for development on the [backend express server](https://github.com/jpke/spaced-rep-express).
 
