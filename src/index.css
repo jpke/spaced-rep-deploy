@@ -115,6 +115,7 @@ h1 {
 .logoutContainer {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
 }
 
@@ -202,19 +203,30 @@ input {
 @media (max-width: 730px) {
   .landing, .quiz {
     width: 95%;
-    height: 700px;
+    /*height: 650px;*/
     padding: 0;
+    justify-content: space-around;
+  }
+  .landing h1 {
+    font-size: 30px;
+  }
+  .link-box {
+    font-size: 10px;
+    padding: 8px;
   }
   .quiz {
     justify-content: space-between;
   }
+  .ewok-friend {
+    height: 46vmin;
+  }
   .thugLife, .ewokLife {
-    height: 300px;
+    height: 50vmin;
   }
 
 }
 
-@media (max-height: 600px) {
+@media (max-height: 567px) {
   .landing, .quiz {
     width: auto;
     height: 95%;
@@ -223,7 +235,17 @@ input {
   }
   .quiz {
     width: 70%;
-    height: 90%;
+    height: 95%;
+  }
+  .link-box {
+    font-size: 8px;
+    padding: 8px;
+  }
+  button {
+    padding: 8px;
+  }
+  .thugLife, .ewokLife {
+    height: 40vmin;
   }
   h1 {
     font-size: 4vmax;
