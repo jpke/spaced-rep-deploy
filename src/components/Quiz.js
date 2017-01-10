@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from './actions';
+import * as actions from '../actions/actions';
 
 class Quiz extends Component {
 
@@ -39,7 +39,7 @@ class Quiz extends Component {
 
   render() {
     return  <div className='quiz'>
-              <div>
+              <div className="logoutContainer">
                 <button className='logout' onClick={this.handleClick.bind(this)}>Log Out</button>
               </div>
               <h1>Ewokese Quiz</h1>

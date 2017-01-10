@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
-// const URL = "http://localhost:3090/"
-const URL =  "https://intense-wildwood-92655.herokuapp.com/"
+const URL = "http://localhost:3090/"
+// const URL =  "https://intense-wildwood-92655.herokuapp.com/"
 
 export const CHECK_RESPONSE = 'CHECK_RESPONSE'
 export const checkResponse = (isCorrect) => {

@@ -3,7 +3,7 @@ import {
   LOGGED_IN,
   LOG_OUT,
   POPULATE_QUESTIONS
-} from './actions';
+} from '../actions/actions';
 
 export const initialState = {
   questions: [],
