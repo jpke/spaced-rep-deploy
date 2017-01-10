@@ -58,6 +58,7 @@ button {
   text-decoration: none;
   font-size: 12px;
   margin: 3px;
+  text-align: center;
 }
 
 .quizLink {
@@ -148,9 +149,16 @@ input {
 }
 
 .card-page {
-  margin-top: 25px;
+  height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-page-nav {
+  display: flex;
+
 }
 
 .cardPage-title {

@@ -186,9 +186,9 @@ export class CardPage extends Component {
 
 	createCards() {
 		const cards = this.state.questions.map((card, index) => {
-			return 	<div key={index}>
-						<this.state.Card card={card} />
-					</div>
+			return <div key={index}>
+    						<this.state.Card card={card} />
+    					</div>
 		})
 		return cards
 	}
@@ -196,23 +196,36 @@ export class CardPage extends Component {
 	render() {
 		return  <div className='card-page'>
               <div className='card-header'>
+                <div>
       					{this.props.printable === 'true' ?
                   <div>
-                    <Link className='card-link' to="/study-cards">Go To Study Page</Link>
-                    <Link className='quiz-link' to="quiz">Go To Quiz</Link>
-                    <div className="cardPage-title printable">
-          						<h1 className="printableFlashCards">Printable Flash Cards</h1>
-                    </div>
+                    <div className="card-page-nav">
+                      <div className="link-box quiz-link">
+                        <Link className='card-link' to="/study-cards">Go To Study Page</Link>
+                      </div>
+                      <div className="link-box quiz-link"><Link className='quiz-link' to="quiz">Go To Quiz</Link></div>
+                      </div>
+                      <div className="cardPage-title printable">
+            						<h1 className="printableFlashCards">Printable Flash Cards</h1>
+                      </div>
                   </div>
                   :
-                  <div className='card-header'>
-                    <Link className='card-link' to="/print-cards">Print Flash Cards</Link>
-                    <Link className='quiz-link' to="quiz">Go To Quiz</Link>
-                    <div className="cardPage-title">
-                      <h1>Study Ewokese</h1>
-                      <h2>click on card for translation</h2>
+                  <div>
+                    <div className="card-page-nav">
+                      <div className="link-box quizLink">
+                        <Link className='card-link' to="/print-cards">Print Flash Cards</Link>
+                      </div>
+                      <div className="link-box quizLink">
+                        <Link className='quiz-link' to="quiz">Go To Quiz</Link>
+                      </div>
                     </div>
-                  </div>}
+                </div>
+                }
+                <div className="cardPage-title">
+                  <h1>Study Ewokese</h1>
+                  <h2>click on card for translation</h2>
+                </div>
+              </div>
       					   {this.createCards()}
 				      </div>
             </div>
