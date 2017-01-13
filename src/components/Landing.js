@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import * as actions from '../actions/actions.js';
 import { connect } from 'react-redux';
 
-const AUTH_URL = "http://localhost:3090/auth/google/"
-// const AUTH_URL = "https://intense-wildwood-92655.herokuapp.com/auth/google"
+// const AUTH_URL = "http://localhost:3090/auth/google/"
+const AUTH_URL = "https://intense-wildwood-92655.herokuapp.com/auth/google"
 
 class Landing extends Component {
 	handleOnClick() {
