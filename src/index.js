@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Landing from './Landing';
-import Quiz from './Quiz.js'
-import {CardPage, PrintCardPage} from './CardPage.js'
+import App from './components/App';
+import Landing from './components/Landing';
+import Quiz from './components/Quiz.js'
+import {CardPage, PrintCardPage} from './components/CardPage.js'
 import './index.css';
 import { Provider } from 'react-redux'
 import store from './configureStore'
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import RequireAuth from './requireAuth'
-import {LOGGED_IN} from './actions.js'
+import {LOGGED_IN} from './actions/actions.js'
 
 const token = localStorage.getItem('token')
 if(token) {

@@ -1,6 +1,6 @@
 # Ewokese
 
-A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brush up on your Ewokese! 
+A long time ago in a galaxy far, far away... Ewoks existed. Use [this app](https://jpke.github.io/spaced-rep-deploy/#/) to brush up on your Ewokese!
 
 
 
@@ -17,16 +17,16 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 ## Technologies
 
-* React
-* Redux
-* JavaScript
-* CSS
+* HTML/CSS
+* React/Redux
+* Express
 * Google OAuth2
 * MongoDB
 
 
 
 ## API Reference
+#### The server code can be found [here](https://github.com/jpke/spaced-rep-express)
 
 * GET /question      :: returns all questions
 * GET /auth/google   :: initial authentication request
@@ -39,10 +39,25 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use this app to brus
 
 ## Use
 
-* To use this app, you must clone this repository and the one found at https://github.com/jpke/spaced-rep-express. You have to obtain credentials from Google for authentication access. You can find a guideline here:  https://developers.google.com/identity/protocols/OAuth2 . 
+* To use this app, navigate [here](https://jpke.github.io/spaced-rep-deploy/#/) and authenticate through Google. The redirect to do this may take a few seconds since the app express server is on a free heroku dyno that may need to wake up.
+* To develop on this app's frontend, make sure you have node and npm [installed](https://docs.npmjs.com/getting-started/installing-node), then simply clone the repo run:
+
+ ```sh
+ npm install
+ ```
+
+ * Since this app was created using create-react-app, you can run a development server with live reload by typing:
+
+ ```sh
+ npm start
+ ```
+
+ * Note, you will need to change ```const URL``` in src/actions.js and ```const AURH_URL``` in src/Landing.js to [http://localhost:3090](http://localhost:3090) in order to develop locally.
+
+* These same npm commands will work for development on the [backend express server](https://github.com/jpke/spaced-rep-express).
 
 
-
+##
 ##### Contributers
 * bsoung
 * dennellmarie
