@@ -20,7 +20,7 @@ class Landing extends Component {
 	render() {
     return <div className='landing'>
 							<h1>Learn Ewokese</h1>
-							<img className='ewok-friend' src='./public/ewokAndChild.jpeg' alt="ewok and friend"/>
+							<img className='ewok-friend' src='https://raw.githubusercontent.com/jpke/spaced-rep-deploy/master/ewokAndChild.jpeg' alt="ewok and friend"/>
 							<div>
 								<h2>A long time ago in a galaxy far, far away... </h2>
 					      <h3>Ewoks existed. Learn to speak Ewokese!</h3>
