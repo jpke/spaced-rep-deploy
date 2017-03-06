@@ -14,7 +14,7 @@ export const checkResponse = (isCorrect) => {
 export const DEMO = 'DEMO'
 export const demo =() => {
   return (dispatch) => {
-    return fetch(URL + 'demo/question', {
+    return fetch(URL + 'demo/user', {
       method:'POST',
       headers: {
         'Accept': 'application/json',
