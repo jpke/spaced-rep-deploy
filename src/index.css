@@ -65,11 +65,6 @@ button {
   text-align: center;
 }
 
-.quizLink {
-  margin-left: 70px;
-  margin-right: 70px;
-}
-
 .quiz-link {
   text-decoration: none;
   flex: 12;
@@ -165,6 +160,13 @@ input {
 
 }
 
+.card-page-nav .link-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cardPage-title {
   background-color: rgba(255,255,255,0.6);
   border-radius: 5px;
@@ -172,25 +174,22 @@ input {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 50px;
-}
-
-.printable {
+  margin-top: 12px;
   width: 400px;
-  margin: auto;
-  margin-top: 50px;
+  margin: 6px auto;
 }
 
 .card-header h1 {
-  height: 125px;
   width: 350px;
+  margin: 3px;
+  font-size: 30px;
 }
 
 .card-header h2 {
-  margin-top: -28px;
-  height: 85px;
+  font-size: 20px;
   width: 350px;
   text-align: center;
+  margin: 3px;
 }
 
 .print-card p {
@@ -212,22 +211,42 @@ input {
   background-color: #fff;
 }
 
-@media (max-width: 730px) {
+/*responsive design*/
+@media (max-width: 730px) and (orientation: landscape){
   .landing, .quiz {
-    width: 95%;
-    /*height: 650px;*/
+    width: 90%;
+    height: 90%;
     padding: 0;
     justify-content: space-around;
   }
-  .landing h1 {
-    font-size: 30px;
+  h1 {
+    font-size: 25px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  .nav-buttons {
+    width: 80%;
+    display: flex;
   }
   .link-box {
     font-size: 10px;
-    padding: 8px;
+    padding: 6px;
+    flex: 1;
+    height: 12px;
+    margin: 3px;
   }
   .quiz {
     justify-content: space-between;
+  }
+  .logout {
+    margin-top: 10vh;
+    margin-right: 0.6vw;
   }
   .ewok-friend {
     height: 46vmin;
@@ -235,22 +254,34 @@ input {
   .thugLife, .ewokLife {
     height: 50vmin;
   }
-
+  .card-page-nav .link-box {
+    font-size: 15px;
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardPage-title {
+    margin-top: 12px;
+  }
 }
 
-@media (max-height: 567px) {
-  .landing, .quiz {
-    width: auto;
-    height: 95%;
+@media (max-width: 430px) and (orientation: portrait){
+  .landing {
+    width: 90%;
+    height: 85%;
     font-size: 1.5vmax;
     padding: 6px;
+    justify-content: space-around;
   }
   .quiz {
-    width: 70%;
-    height: 95%;
+    width: 85%;
+    height: 90%;
+    justify-content: flex-start;
+
   }
   .link-box {
-    font-size: 8px;
+    font-size: 12px;
     padding: 8px;
   }
   button {
@@ -259,15 +290,33 @@ input {
   .thugLife, .ewokLife {
     height: 40vmin;
   }
+  .quiz h1 {
+    margin-top: 12px;
+  }
   h1 {
-    font-size: 4vmax;
-    margin: 3px;
+    font-size: 30px;
+    margin: 12px;
   }
   h2 {
-    margin: 3px;
+    font-size: 20px;
   }
   h3 {
-    font-size: 2vmax;
-    margin: 6px;
+    font-size: 25px;
+    margin: 12px auto;
+  }
+  .logout {
+    margin: 0;
+  }
+  .english-input {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+  }
+  .card-page-nav {
+    width: 90%;
+    margin: 3px auto;
+  }
+  .cardPage-title {
+    width: 90%;
   }
 }
