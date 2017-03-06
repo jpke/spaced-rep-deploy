@@ -179,8 +179,8 @@ var questions = [
 export class CardPage extends Component {
 	constructor(props) {
 		super(props)
-		this.state = {questions}
-		this.state.Card = this.props.printable === "true" ? PrintCard : StudyCard;
+		this.state = {questions, Card: this.props.printable === "true" ? PrintCard : StudyCard}
+		// this.state.Card = this.props.printable === "true" ? PrintCard : StudyCard;
 
 	}
 

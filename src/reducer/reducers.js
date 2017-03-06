@@ -2,14 +2,16 @@ import {
   CHECK_RESPONSE,
   LOGGED_IN,
   LOG_OUT,
-  POPULATE_QUESTIONS
+  POPULATE_QUESTIONS,
+  DEMO
 } from '../actions/actions';
 
 export const initialState = {
-  questions: [],
+  question: "",
   numCorrect: 0,
   numIncorrect: 0,
   isLoggedIn: false,
+  demoMode: false,
   accessToken: undefined,
   score: 0
 }
@@ -28,23 +30,37 @@ export const Reducer = function(state=initialState, action={}) {
         score -= 5
         numIncorrect++
       }
-
-      return { ...state, isCorrect: action.isCorrect,
-              numCorrect: numCorrect, numIncorrect: numIncorrect, score: score }
-
+      return {
+        ...state,
+        isCorrect: action.isCorrect,
+        numCorrect: numCorrect,
+        numIncorrect: numIncorrect,
+        score: score
+      }
+    case DEMO:
+      return {
+        ...state,
+        demoMode: true
+      };
     case LOGGED_IN:
-    console.log(action.accessToken)
     localStorage.setItem('token', action.accessToken)
     localStorage.getItem('token')
-      return {...state, isLoggedIn: true}
-
+      return {
+        ...state,
+        isLoggedIn: true
+      }
     case LOG_OUT:
       localStorage.removeItem('token')
-      return {...state, isLoggedIn: false}
-
+      return {
+        ...state,
+        isLoggedIn: false,
+        demoMode: false
+      }
     case POPULATE_QUESTIONS:
-      return {...state, questions: action.data}
-
+      return {
+        ...state,
+        question: action.data
+      }
     default:
       return state;
   }

@@ -8,7 +8,7 @@ class Quiz extends Component {
     e.preventDefault();
     let isCorrect = (e.target.englishInput.value.toLowerCase() === this.props.question.answer.toLowerCase()) ? true : false;
     this.props.checkResponse(isCorrect)
-    this.props.sendUserInput(this.props.question._id, isCorrect)
+    this.props.sendUserInput(this.props.question._id, isCorrect, this.props.demoMode)
     e.target.englishInput.value = ''
   }
 
@@ -26,7 +26,7 @@ class Quiz extends Component {
   }
 
   componentWillMount() {
-    this.props.fetchQuestion()
+    this.props.fetchQuestion(this.props.demoMode)
   }
 
   checkQuestion() {
@@ -63,7 +63,8 @@ class Quiz extends Component {
 
 function mapStateToProps(state) {
   return {
-    question: state.questions[0],
+    demoMode: state.demoMode,
+    question: state.question,
     numCorrect: state.numCorrect,
     numIncorrect: state.numIncorrect,
     accessToken: state.accessToken,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import * as actions from '../actions/actions.js';
+import {loggedIn, demo} from '../actions/actions.js';
 import { connect } from 'react-redux';
 
 // const AUTH_URL = "http://localhost:3090/auth/google/"
@@ -34,7 +34,10 @@ class Landing extends Component {
 										<div className="link-box"><Link className='card-link' to="/print-cards">Print Flash Cards</Link></div>
 									</div>
 								:
-									<button onClick={this.handleOnClick.bind(this)}>Login through Google</button>
+									<div className="nav-login">
+										<button onClick={this.handleOnClick.bind(this)}>Login through Google</button>
+										<button onClick={this.props.demo}>Skip Login</button>
+									</div>
 								}
 
 							</div>
@@ -48,4 +51,11 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, actions)(Landing);
+function mapDispatchToProps(dispatch) {
+	return {
+		loggedIn: (token) => {dispatch(loggedIn(token))},
+		demo: () => {dispatch(demo())}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);
