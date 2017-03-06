@@ -10,7 +10,6 @@ html {
 
 body {
   margin: 0;
-  /*padding: 0;*/
   font-family: 'Audiowide', cursive;
 }
 
@@ -29,8 +28,6 @@ body {
 
 .nav {
   display: flex;
-  /*flex-direction: column;*/
-  /*align-items: center;*/
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
@@ -194,8 +191,8 @@ input {
 
 .print-card p {
   background-color: #fff;
-  padding-top: 80px;
   height: 100px;
+  padding-top: 80px;
   width: 300px;
   border: 2px dashed black;
   display: inline-block;
@@ -235,10 +232,8 @@ input {
     display: flex;
   }
   .link-box {
-    font-size: 10px;
     padding: 6px;
     flex: 1;
-    height: 12px;
     margin: 3px;
   }
   .quiz {
@@ -256,10 +251,6 @@ input {
   }
   .card-page-nav .link-box {
     font-size: 15px;
-    height: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   .cardPage-title {
     margin-top: 12px;
@@ -313,10 +304,22 @@ input {
     margin: 12px;
   }
   .card-page-nav {
-    width: 90%;
+    width: 92%;
     margin: 3px auto;
   }
   .cardPage-title {
-    width: 90%;
+    width: 92%;
+  }
+  .cardPage-title h2 {
+    font-size: 18px;
+  }
+  .print-card {
+    width: 92%;
+    margin: 0 auto;
+  }
+  .print-card p {
+    width: 48%;
+    height: 70px;
+    padding-top: 58px;
   }
 }
