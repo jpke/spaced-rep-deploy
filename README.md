@@ -8,18 +8,20 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use [this app](https
 
 ## Motivation
 
-* This is a demonstration of using a spaced repetition algorithm for learning new content. The idea is to repeatedly review learning material, while basing the repetition frequency of each concept on the number of prior successfull recalls.
-* Concretely, consider five items to learn, A, B, C, D, E. Each question starts with an mValue of 1.
-* Item A is reviewed first. A.mValue = 1.
-  * If the user recalls item A, successfully:
-  * A.mValue is set to 3
-  * A is put in ahead in the queue by A.mValue spaces.
-    * The queue would now become: B,C,D,A,E
-    * If the user recalls A correctly when presented with again:
-      * A.mValue is doubled (to 6 in this case)
-      * A is put ahead in the queue by A.mValue spaces.
-  * If the user fails to correctly recall item, A, it is put ahead in the queue by A.mValue spaces.
-    * The queue would instead become: B,A,C,D
+This is a demonstration of using a spaced repetition algorithm for learning new content. The idea is to repeatedly review learning material, while basing the repetition frequency of each concept on the number of prior successfull recalls.
+
+Concretely, consider five items to learn, A, B, C, D, E. Each question starts with an mValue of 1.
+
+Item A is reviewed first. A.mValue = 1.
+* If the user recalls item A, successfully:
+* A.mValue is set to 3
+* A is put in ahead in the queue by A.mValue spaces.
+  * The queue would now become: B,C,D,A,E
+  * If the user recalls A correctly when presented with again:
+    * A.mValue is doubled (to 6 in this case)
+    * A is put ahead in the queue by A.mValue spaces.
+* If the user fails to correctly recall item, A, it is put ahead in the queue by A.mValue spaces.
+  * The queue would instead become: B,A,C,D,E
 * Item B is assessed next, with the same outcomes possible.
 * This process continues as the queue is iterated through.
 
