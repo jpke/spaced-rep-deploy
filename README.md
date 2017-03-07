@@ -66,22 +66,17 @@ Item A is reviewed first. A.mValue = 1.
 
 ## Use
 
-* To use [this app](https://jpke.github.io/spaced-rep-deploy/#/) authenticate through Google, or `Skip Login` to play in demo mode. The redirect for authenticating through Google may take a few seconds since the app server is on a free heroku dyno that may need to wake up.
-* To develop on this app's frontend, make sure you have node and npm [installed](https://docs.npmjs.com/getting-started/installing-node), then simply clone the repo and run:
+To use [this app](https://jpke.github.io/spaced-rep-deploy/#/), authenticate through Google, or select `Skip Login` to play in demo mode.
+ - The redirect for authenticating through Google may take a few seconds since the app server is on a free heroku dyno that may need to wake up.
 
- ```
- npm install
- ```
+To develop this app's front end, make sure you have node and npm [installed](https://docs.npmjs.com/getting-started/installing-node), then simply:
 
- * This was built with [create-react-app](https://github.com/facebookincubator/create-react-app). To start the development server, type:
-
- ```
- npm start
- ```
-
- * Note, you will need to change `const URL` in src/actions.js and `const AURH_URL` in src/Landing.js to [http://localhost:3090](http://localhost:3090) in order to develop locally.
-
-* To modify the backend, see the [app's express server](https://github.com/jpke/spaced-rep-express).
+- clone the repo
+- cd into repo, then run `npm install`
+- start development server with `npm start`
+- navigate to `http://localhost:3000` in your browser to access app
+- change `const URL` in `src/actions.js` and `const AUTH_URL` in `src/Landing.js` to `http://localhost:3090` in order to develop locally.
+- clone, configure and start the [app's express server](https://github.com/jpke/spaced-rep-express).
 
 
 ##
