@@ -1,6 +1,8 @@
 # Ewokese
 
 A long time ago in a galaxy far, far away... Ewoks existed. Use [this app](https://jpke.github.io/spaced-rep-deploy/#/) to brush up on your Ewokese!
+  - Authenticate through Google, or select `Skip Login` to play in demo mode.
+  - The redirect for authenticating through Google may take a few seconds since the app server is on a free heroku dyno that may need to wake up.
 
 <img src="./public/ewokese.jpg" width="440px" />
 
@@ -8,7 +10,9 @@ A long time ago in a galaxy far, far away... Ewoks existed. Use [this app](https
 
 ## Motivation
 
-This is a demonstration of using a spaced repetition algorithm for learning new content. The idea is to repeatedly review learning material, while basing the repetition frequency of each concept on the number of prior successfull recalls.
+This was an fullstack project built with react and node in the fulltime [Thinkful Web Development Bootcamp](https://www.thinkful.com/bootcamp/web-development/full-time/).
+
+The idea was to use a spaced repetition algorithm for learning new content. This involves repeatedly reviewing learning material, while basing the repetition frequency of each concept on the number of prior successfull recalls.
 
 Concretely, consider five items to learn, A, B, C, D, E. Each question starts with an mValue of 1.
 
@@ -42,7 +46,7 @@ Item A is reviewed first. A.mValue = 1.
 
 
 
-## API Reference
+## API
 #### The server code can be found [here](https://github.com/jpke/spaced-rep-express)
 
 * GET /auth/google   :: initial OAuth2 request
@@ -64,10 +68,7 @@ Item A is reviewed first. A.mValue = 1.
 
 
 
-## Use
-
-To use [this app](https://jpke.github.io/spaced-rep-deploy/#/), authenticate through Google, or select `Skip Login` to play in demo mode.
- - The redirect for authenticating through Google may take a few seconds since the app server is on a free heroku dyno that may need to wake up.
+## Develop
 
 To develop this app's front end, make sure you have node and npm [installed](https://docs.npmjs.com/getting-started/installing-node), then simply:
 
